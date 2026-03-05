@@ -1,0 +1,383 @@
+:root{
+  --maroon:#7A0E1A;
+  --gold:#D6A000;
+  --cream:#F6F1EA;
+  --ink:#1E1E1E;
+  --line:#E7DED6;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 18px;
+}
+
+/* =========================
+   HEADER (same as home)
+   ========================= */
+.site-header{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.topbar{
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+
+.topbar-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:8px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  font-size:12px;
+}
+
+.date{ opacity:.85; }
+
+.paper{
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--maroon);
+}
+
+.masthead{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  padding:16px 0;
+}
+
+.masthead-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 18px;
+  display:grid;
+  grid-template-columns: 96px 1fr auto;
+  gap:16px;
+  align-items:center;
+}
+
+.logo-area img{
+  width:86px;
+  height:86px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  border:1px solid var(--line);
+}
+
+.title-area{ min-width:0; }
+
+.site-title{
+  margin:0;
+  font-family:"Chomsky", serif;
+  font-size:48px;
+  line-height:1;
+}
+
+.org-name{
+  margin:6px 0 2px;
+  font-size:16px;
+  font-weight:700;
+}
+
+.chapter{
+  margin:0;
+  font-size:13px;
+  opacity:.85;
+}
+
+.masthead-right{
+  text-align:right;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
+}
+
+.ay{
+  margin:0;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:12px;
+  color:var(--maroon);
+}
+
+.masthead-info{ text-align:right; }
+
+.info-line{
+  margin:2px 0;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.04em;
+}
+
+.social{
+  display:flex;
+  gap:10px;
+}
+
+.social a{
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  text-decoration:none;
+  color:var(--ink);
+  border:1px solid var(--line);
+  background:#fff;
+  font-size:13px;
+}
+
+.main-nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:22px;
+  padding:12px 18px;
+  background:#fff;
+  border-top:1px solid var(--line);
+}
+
+.main-nav a{
+  text-decoration:none;
+  color:var(--ink);
+  font-size:13px;
+  padding:4px 0;
+  border-bottom:2px solid transparent;
+}
+
+.main-nav a.active{
+  border-bottom-color:var(--gold);
+  font-weight:700;
+}
+/* =========================
+   MEMBERS PAGE (photo + name layout)
+   ========================= */
+.members-page{
+  padding:22px 18px 34px;
+}
+
+.page-head{
+  padding:10px 0 18px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:22px;
+  text-align:left;
+}
+
+.page-title{
+  margin:0;
+  font-size:28px;
+  letter-spacing:.02em;
+}
+
+.page-sub{
+  margin:10px 0 0;
+  max-width:75ch;
+  line-height:1.65;
+  font-size:14px;
+  opacity:.9;
+}
+
+.members-block{
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.block-title{
+  margin:0 0 6px;
+  font-size:18px;
+  letter-spacing:.02em;
+}
+
+.block-sub{
+  margin:0 0 16px;
+  font-size:14px;
+  line-height:1.65;
+  opacity:.9;
+  max-width:85ch;
+}
+
+/* GRID like your sample */
+.members-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:18px;
+}
+
+.member{
+  margin:0;
+  padding:0;
+  text-align:center;
+}
+
+.member img{
+  width:100%;
+  aspect-ratio: 3 / 4;      /* pantay lahat */
+  object-fit:cover;
+  display:block;
+  border:1px solid var(--line);
+  background:#fff;
+}
+
+.member figcaption{
+  padding:10px 6px 0;
+}
+
+.member-name{
+  font-weight:800;
+  font-size:13px;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+}
+
+.member-role{
+  margin-top:4px;
+  font-size:12px;
+  opacity:.85;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .members-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 780px){
+  .members-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px){
+  .members-grid{ grid-template-columns: 1fr; }
+}
+/* National reps: still 3 columns, but SAME card width + SAME photo size */
+#national .members-grid{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:18px;
+}
+
+#national .member{
+  width:100%;
+  max-width:none; /* keep same size as other cards */
+}
+/* ===== EXEC last row (Treasurer + Auditor + Logo) ===== */
+.exec-lastrow{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:18px;
+  justify-content:center;
+}
+
+.exec-lastrow .member img{
+  width:100%;
+  aspect-ratio: 3 / 4;
+  object-fit:cover;
+  display:block;
+  border:1px solid var(--line);
+  background:#fff;
+}
+
+/* Make the logo fit nicely (still same height) */
+.exec-lastrow .member-logo img{
+  object-fit:contain;
+  padding:18px;
+  background:#fff;
+}
+/* Logo card beside Treasurer/Auditor (same height, cleaner fit) */
+.member-logo img{
+  aspect-ratio:1 / 1;
+  border-radius:50%;
+  object-fit:cover;
+  padding:0;
+  border:1px solid var(--line);
+
+  display:block;
+  margin:0 auto;   /* this centers the circle */
+  width:100%;   
+}
+/* =========================
+   FOOTER (same as home)
+   ========================= */
+.site-footer{
+  background: var(--maroon);
+  color: #fff;
+  margin-top: 40px;
+}
+
+.footer-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 26px 18px;
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.footer-col h3{
+  margin: 0 0 10px;
+  font-size: 16px;
+  letter-spacing: .02em;
+}
+
+.footer-col p{
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  opacity: .95;
+}
+
+.footer-logos{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.footer-logos img{
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.20);
+  padding: 6px;
+}
+
+.footer-quote{
+  font-style: italic;
+  opacity: .9;
+}
+
+.site-footer a{
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.35);
+}
+
+.site-footer a:hover{
+  border-bottom-color: rgba(255,255,255,.85);
+}
+
+.footer-bottom{
+  border-top: 1px solid rgba(255,255,255,.18);
+  padding: 12px 18px;
+  text-align: center;
+}
+
+.footer-bottom p{
+  margin: 0;
+  font-size: 12px;
+  opacity: .92;
+}
